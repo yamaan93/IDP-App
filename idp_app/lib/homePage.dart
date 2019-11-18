@@ -8,18 +8,25 @@ class HomePage extends StatelessWidget {
     return Container(
       child: Scaffold(
         backgroundColor: kMainBackgroundColor,
-        appBar: AppBar(
-            title: Text(
-          kApptitle,
-          style: kLableTextStyle,
-        )),
-        body: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            RoundTextButton(
-              input: "offline mode",
-              onPressed: () {},
-            )
+            GestureDetector(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 100),
+                child: Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Login',
+                      style: kLableTextStyle.copyWith(color: Colors.black),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
