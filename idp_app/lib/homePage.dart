@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'consts.dart';
 import 'roundTextButton.dart';
 import 'cardButton.dart';
+import 'toDoPage.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -26,7 +27,7 @@ class _HomePageState extends State<HomePage> {
             ),
             cardButton(
               onPressed: (){
-                Navigator.pushNamed((context), '/Todo');
+                Navigator.pushNamed((context), '/ToDo');
               },
               text: "offline mode",
             ),

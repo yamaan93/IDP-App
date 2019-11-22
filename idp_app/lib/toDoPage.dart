@@ -16,11 +16,14 @@ class _ToDoPageState extends State<ToDoPage> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                const ListTile(
+                SizedBox(
+                  height: 100,
+                ),
+               /* const ListTile(
                   leading: Icon(Icons.album),
                   title: Text('The Enchanted Nightingale'),
                   subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
-                ),
+                ),*/
                 ButtonTheme.bar( // make buttons use the appropriate styles for cards
                   child: ButtonBar(
                     children: <Widget>[
