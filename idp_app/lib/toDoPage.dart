@@ -1,49 +1,21 @@
 import 'package:flutter/material.dart';
 import 'consts.dart';
 
+import 'taskCard.dart';
+
+//todo create card creation page,
+// todo create more info page.
 class ToDoPage extends StatefulWidget {
   @override
   _ToDoPageState createState() => _ToDoPageState();
 }
 
 class _ToDoPageState extends State<ToDoPage> {
+  List<Widget> Tasks = [TaskCard(taskName: "finish app", taskOwner: "yamaan")];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: <Widget>[
-          Card(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                SizedBox(
-                  height: 100,
-                ),
-               /* const ListTile(
-                  leading: Icon(Icons.album),
-                  title: Text('The Enchanted Nightingale'),
-                  subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
-                ),*/
-                ButtonTheme.bar( // make buttons use the appropriate styles for cards
-                  child: ButtonBar(
-                    children: <Widget>[
-                      FlatButton(
-                        child: const Text('BUY TICKETS'),
-                        onPressed: () { /* ... */ },
-                      ),
-                      FlatButton(
-                        child: const Text('LISTEN'),
-                        onPressed: () { /* ... */ },
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-
-        ],
-      ),
+      body: Column(children: Tasks),
     );
   }
 }
