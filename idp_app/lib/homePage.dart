@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
               text: "login",
             ),
             cardButton(
-              onPressed: (){
+              onPressed: () {
                 Navigator.pushNamed((context), '/ToDo');
               },
               text: "offline mode",
