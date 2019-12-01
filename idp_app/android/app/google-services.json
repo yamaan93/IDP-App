@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "956025493367",
+    "firebase_url": "https://idp-worktogether.firebaseio.com",
+    "project_id": "idp-worktogether",
+    "storage_bucket": "idp-worktogether.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956025493367:android:0c2717de46e92afc143372",
+        "android_client_info": {
+          "package_name": "com.yamaanbakir.idp_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "956025493367-ja23qgso42i3pdbk6di9pnmbj9qbrrgr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdAxt2wdydD-ftp6aQ0GTo-amd0zhBA0E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "956025493367-ja23qgso42i3pdbk6di9pnmbj9qbrrgr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
