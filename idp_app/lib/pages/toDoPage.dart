@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'consts.dart';
+import '../consts.dart';
 
-import 'taskCard.dart';
+import '../Widgets/taskCard.dart';
 
 //todo create card creation page,
 // todo create more info page.

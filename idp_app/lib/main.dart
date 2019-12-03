@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:idp_app/consts.dart';
-import 'homePage.dart';
-import 'toDoPage.dart';
+import 'pages/homePage.dart';
+import 'pages/toDoPage.dart';
+import 'wrapper.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,8 +17,9 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => HomePage(),
+        '/': (context) => Wrapper(),
         '/ToDo': (context) => ToDoPage(),
+        '/Home': (context) => HomePage(),
       },
     );
   }

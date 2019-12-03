@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'consts.dart';
+import '../consts.dart';
 
 class TaskCard extends StatefulWidget {
   String taskName;

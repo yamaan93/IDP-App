@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'consts.dart';
-import 'roundTextButton.dart';
-import 'cardButton.dart';
+import '../consts.dart';
+import '../widgets/roundTextButton.dart';
+import '../Widgets/cardButton.dart';
 import 'toDoPage.dart';
 
 class HomePage extends StatefulWidget {
@@ -24,6 +24,12 @@ class _HomePageState extends State<HomePage> {
             ),
             cardButton(
               text: "login",
+            ),
+            cardButton(
+              text: "sign up",
+              onPressed: (){
+
+              },
             ),
             cardButton(
               onPressed: () {
