@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:idp_app/consts.dart';
-import 'pages/homePage.dart';
+import 'pages/sign_in.dart';
 import 'pages/toDoPage.dart';
 import 'wrapper.dart';
+import 'package:idp_app/pages/sign_in.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => Wrapper(),
         '/ToDo': (context) => ToDoPage(),
-        '/Home': (context) => HomePage(),
+        '/Home': (context) => SignIn(),
+        '/signIn': (context) => SignIn(),
       },
     );
   }

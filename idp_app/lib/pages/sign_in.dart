@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:idp_app/services/auth.dart';
 import '../consts.dart';
 import '../widgets/roundTextButton.dart';
 import '../Widgets/cardButton.dart';
 import 'toDoPage.dart';
 
-class HomePage extends StatefulWidget {
+class SignIn extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _SignInState createState() => _SignInState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _SignInState extends State<SignIn> {
+  final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,16 +29,27 @@ class _HomePageState extends State<HomePage> {
             ),
             cardButton(
               text: "sign up",
-              onPressed: (){
-
-              },
+              onPressed: () {},
             ),
             cardButton(
+              text: "sign in anon",
+              onPressed: () async {
+                dynamic result = await _auth.signInAnon();
+                if (result == null) {
+                  print('error signing in');
+                } else {
+                  print("user signed in");
+                  print(result);
+                }
+              },
+            ),
+            /*cardButton(
               onPressed: () {
                 Navigator.pushNamed((context), '/ToDo');
               },
               text: "offline mode",
             ),
+            */
           ],
         ),
       ),
