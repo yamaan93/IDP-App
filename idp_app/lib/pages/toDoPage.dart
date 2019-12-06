@@ -15,7 +15,23 @@ class _ToDoPageState extends State<ToDoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(children: Tasks),
+      appBar: AppBar(
+        title: Text('Todo'),
+        backgroundColor: kMainThemeColor,
+        actions: <Widget>[
+          FlatButton.icon(
+              onPressed: () {},
+              icon: Icon(Icons.person),
+              label: Text(
+                'signout',
+              ))
+        ],
+      ),
+      body: Container(
+        child: Column(
+          children: Tasks,
+        ),
+      ),
     );
   }
 }

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:idp_app/consts.dart';
+import 'package:idp_app/services/auth.dart';
+import 'package:provider/provider.dart';
 import 'pages/sign_in.dart';
 import 'pages/toDoPage.dart';
 import 'wrapper.dart';
 import 'package:idp_app/pages/sign_in.dart';
+import 'models/user.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,7 +21,10 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => Wrapper(),
+        '/': (context) => StreamProvider<User>.value(
+              value: AuthService().user,
+              child: Wrapper(),
+            ),
         '/ToDo': (context) => ToDoPage(),
         '/Home': (context) => SignIn(),
         '/signIn': (context) => SignIn(),
