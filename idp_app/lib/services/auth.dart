@@ -31,4 +31,13 @@ class AuthService {
   //sign up
 
   //sign out
+  Future signOut() async{
+    try{
+      _auth.signOut();
+
+    }catch(e){
+      print('error signing out');
+    }
+
+  }
 }
