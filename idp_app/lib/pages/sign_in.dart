@@ -24,13 +24,24 @@ class _SignInState extends State<SignIn> {
             Container(
               child: Image.asset('assets/images/logo1.JPG'),
             ),
+            Form(
+              child: Column(
+                children: <Widget>[
+                  SizedBox(height: 20),
+                  TextFormField(
+                    onChanged: (val) {},
+                  )
+                ],
+              ),
+            ),
+            /*
             cardButton(
               text: "login",
             ),
             cardButton(
               text: "sign up",
               onPressed: () {},
-            ),
+            ),*/
             cardButton(
               text: "sign in anon",
               onPressed: () async {

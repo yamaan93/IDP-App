@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:idp_app/pages/authentication/authenticate.dart';
-import 'package:idp_app/pages/sign_in.dart';
-import 'package:idp_app/pages/sign_in.dart';
+import 'pages/home_page.dart';
 import 'package:provider/provider.dart';
 import 'pages/toDoPage.dart';
 import 'models/user.dart';
@@ -14,7 +13,7 @@ class Wrapper extends StatelessWidget {
     if (user == null) {
       return Authenticate();
     } else {
-      return ToDoPage();
+      return HomePage();
     }
   }
 }
