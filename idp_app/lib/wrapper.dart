@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:idp_app/pages/authentication/authenticate.dart';
-import 'pages/home_page.dart';
+import 'pages/home/home_page.dart';
 import 'package:provider/provider.dart';
 import 'pages/toDoPage.dart';
 import 'models/user.dart';
