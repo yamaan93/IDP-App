@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:idp_app/consts.dart';
 import 'package:idp_app/services/auth.dart';
@@ -6,6 +5,7 @@ import 'package:idp_app/services/database.dart';
 import 'package:provider/provider.dart';
 import 'project_list.dart';
 import 'package:idp_app/models/project.dart';
+import 'new_project_form.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
           builder: (context) {
             return Container(
               padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
-              child: Text('bottom sheet'),
+              child: NewProjectForm(),
             );
           });
     }
@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
       value: DataBaseService().projectsAvalible,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Todo'),
+          title: Text('Projects'),
           backgroundColor: kMainThemeColor,
           actions: <Widget>[
             //sign out
