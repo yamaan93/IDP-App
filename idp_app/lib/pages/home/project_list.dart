@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
+import 'package:idp_app/models/project.dart';
+import 'project_tile.dart';
 
 class ProjectList extends StatefulWidget {
   @override
@@ -10,11 +11,18 @@ class ProjectList extends StatefulWidget {
 class _ProjectListState extends State<ProjectList> {
   @override
   Widget build(BuildContext context) {
-    final projects = Provider.of<QuerySnapshot>(context);
-    //print(projects.documents);
-    for (var doc in projects.documents) {
-      print(doc.data);
-    }
-    return Container();
+    final projects = Provider.of<List<Project>>(context);
+
+    projects.forEach((project) {
+      print(project.name);
+      print(project.owner);
+    });
+
+    return ListView.builder(
+      itemCount: projects.length,
+      itemBuilder: (context, index) {
+        return ProjectTile(project: projects[index]);
+      },
+    );
   }
 }

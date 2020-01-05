@@ -5,6 +5,7 @@ import 'package:idp_app/services/auth.dart';
 import 'package:idp_app/services/database.dart';
 import 'package:provider/provider.dart';
 import 'project_list.dart';
+import 'package:idp_app/models/project.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -17,13 +18,25 @@ class _HomePageState extends State<HomePage> {
   List<Widget> Projects = [];
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<QuerySnapshot>.value(
-      value: DataBaseService().userInfo,
+    void _showNewProjectPanel() {
+      showModalBottomSheet(
+          context: context,
+          builder: (context) {
+            return Container(
+              padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
+              child: Text('bottom sheet'),
+            );
+          });
+    }
+
+    return StreamProvider<List<Project>>.value(
+      value: DataBaseService().projectsAvalible,
       child: Scaffold(
         appBar: AppBar(
           title: Text('Todo'),
           backgroundColor: kMainThemeColor,
           actions: <Widget>[
+            //sign out
             FlatButton.icon(
                 onPressed: () async {
                   await _auth.signOut();
@@ -31,7 +44,13 @@ class _HomePageState extends State<HomePage> {
                 icon: Icon(Icons.person),
                 label: Text(
                   'signout',
-                ))
+                )),
+            //add new project
+            FlatButton.icon(
+              onPressed: () => _showNewProjectPanel(),
+              icon: Icon(Icons.add),
+              label: Text('new project'),
+            ),
           ],
         ),
         body: ProjectList(),
