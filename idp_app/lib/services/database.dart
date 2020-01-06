@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:idp_app/models/project.dart';
+import 'package:idp_app/models/user.dart';
 
 class DataBaseService {
   final String uid;
@@ -29,6 +30,14 @@ class DataBaseService {
     }).toList();
   }
 
+// user data from snapshot
+  UserData _userDataFromSnapshot(DocumentSnapshot snapshot) {
+    return UserData(
+      uid: uid,
+      name: snapshot.data['name'],
+    );
+  }
+
   //get database stream
   Stream<QuerySnapshot> get userInfo {
     return userCollection.snapshots();
@@ -36,5 +45,10 @@ class DataBaseService {
 
   Stream<List<Project>> get projectsAvalible {
     return projectsCollection.snapshots().map(_projectListFromSnapshot);
+  }
+
+  //get user document stream
+  Stream<UserData> get userData {
+    return userCollection.document(uid).snapshots().map(_userDataFromSnapshot);
   }
 }
