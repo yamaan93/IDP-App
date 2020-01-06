@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'project_list.dart';
 import 'package:idp_app/models/project.dart';
 import 'new_project_form.dart';
+import 'package:idp_app/models/user.dart';
 
 class HomePage extends StatefulWidget {
   @override
