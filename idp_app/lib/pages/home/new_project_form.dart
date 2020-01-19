@@ -20,7 +20,7 @@ class _NewProjectFormState extends State<NewProjectForm> {
 
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<User>(context);
+    User user = Provider.of<User>(context);
 
     return StreamBuilder<UserData>(
         stream: DataBaseService(uid: user.uid).userData,
