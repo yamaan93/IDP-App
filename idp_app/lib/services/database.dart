@@ -22,6 +22,15 @@ class DataBaseService {
     });
   }
 
+  Future updateProjectList(
+    String name,
+  ) async {
+    return await projectsCollection.document(uid).setData({
+      'name': name,
+      'owner': 'Yamaan',
+    });
+  }
+
   //project list from snapshot
   List<Project> _projectListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc) {

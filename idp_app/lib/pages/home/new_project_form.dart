@@ -17,13 +17,12 @@ class _NewProjectFormState extends State<NewProjectForm> {
   String _name;
   bool _currentPublicity;
   String _ownerUID;
+  String uid = 'Lmr44VxQoyMJgXoLAHbhMPExTvl1';
 
   @override
   Widget build(BuildContext context) {
-    User user = Provider.of<User>(context);
-
     return StreamBuilder<UserData>(
-        stream: DataBaseService(uid: user.uid).userData,
+        stream: DataBaseService(uid: uid).userData,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return Form(
@@ -71,9 +70,8 @@ class _NewProjectFormState extends State<NewProjectForm> {
                       ),
                       onPressed: () async {
                         //_ownerUID = userData.uid;
-                        print(_name);
-                        print(_currentPublicity);
-                        print(_ownerUID);
+                        await DataBaseService(uid: uid)
+                            .updateProjectList(_name);
                       }),
                 ],
               ),
